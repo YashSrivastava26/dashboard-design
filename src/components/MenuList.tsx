@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { FC } from "react";
 import Dashboard from "../assets/dashboard 1.svg";
@@ -11,13 +12,21 @@ import Invoice from "../assets/invoice 1.svg";
 import Shop from "../assets/online-shopping 1.svg";
 import Courses from "../assets/Video Lesson 2 1.svg";
 import { ChevronDown, ChevronRight } from "lucide-react";
-
+import { Badge } from "@chakra-ui/react";
+import { Open_Sans } from "next/font/google";
 interface MenuListProps {}
+const open_scans = Open_Sans({
+  subsets: ["latin"],
+});
 
 const MenuList: FC<MenuListProps> = ({}) => {
   return (
     <div className="flex flex-col pl-8 py-2 w-full gap-y-4  h-full">
-      <h2 className="uppercase text-white tracking-wide">Main Menu</h2>
+      <h2
+        className={`uppercase text-white tracking-wide ${open_scans.className}`}
+      >
+        Main Menu
+      </h2>
 
       <ul
         role="list"
@@ -27,10 +36,10 @@ const MenuList: FC<MenuListProps> = ({}) => {
         <li className="py-1">
           <a
             href="#"
-            className="text-lg flex items-center justify-between text-[#464366]"
+            className="text-base flex items-center justify-between text-[#464366]"
           >
-            <div className="flex gap-x-4">
-              <Image src={Dashboard} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Dashboard} alt="dashboard" className="w-4 h-4" />
               <span className="">Home</span>
             </div>
           </a>
@@ -42,9 +51,12 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#464366] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Email} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 justify-center items-center">
+              <Image src={Email} alt="dashboard" className="w-4 h-4" />
               <span className="">Email</span>
+              <div className="rounded-full bg-[#5ECFFF] text-[0.6rem] h-4 w-4 flex items-center justify-center text-white">
+                17
+              </div>
             </div>
             <ChevronDown className="h-4" />
           </a>
@@ -56,8 +68,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#7879F1] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Chat} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Chat} alt="dashboard" className="w-4 h-4" />
               <span className="">Chat</span>
             </div>
           </a>
@@ -69,8 +81,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#6418C3] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Kanban} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Kanban} alt="dashboard" className="w-4 h-4" />
               <span className="">Kanban</span>
             </div>
             <ChevronRight className="h-4" />
@@ -81,12 +93,15 @@ const MenuList: FC<MenuListProps> = ({}) => {
         <li className="py-1">
           <a
             href="#"
-            className="text-[#7879F1] text-lg flex items-center justify-between"
+            className="text-[#7879F1] text-lg flex items-center gap-x-4"
           >
-            <div className="flex gap-x-4">
-              <Image src={Contact} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Contact} alt="dashboard" className="w-4 h-4" />
               <span className="">Contact</span>
             </div>
+            <Badge className="rounded-xl text-[0.6rem] py-1 px-2 bg-[#E328AF] leading-3 text-white font-semibold">
+              New
+            </Badge>
           </a>
         </li>
         {/* Calander */}
@@ -95,8 +110,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#7879F1] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Calander} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Calander} alt="dashboard" className="w-4 h-4" />
               <span className="">Calander</span>
             </div>
           </a>
@@ -107,8 +122,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#7879F1] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Courses} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Courses} alt="dashboard" className="w-4 h-4" />
               <span className="">Courses</span>
             </div>
             <ChevronRight className="h-4" />
@@ -120,8 +135,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#7879F1] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Shop} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Shop} alt="dashboard" className="w-4 h-4" />
               <span className="">Shop</span>
             </div>
           </a>
@@ -132,8 +147,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#7879F1] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Invoice} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Invoice} alt="dashboard" className="w-4 h-4" />
               <span className="">Invoice</span>
             </div>
             <ChevronRight className="h-4" />
@@ -145,8 +160,8 @@ const MenuList: FC<MenuListProps> = ({}) => {
             href="#"
             className="text-[#7879F1] text-lg flex items-center justify-between"
           >
-            <div className="flex gap-x-4">
-              <Image src={Settings} alt="dashboard" className="w-6 h-6" />
+            <div className="flex gap-x-4 items-center justify-center">
+              <Image src={Settings} alt="dashboard" className="w-4 h-4" />
               <span className="">Settings</span>
             </div>
           </a>

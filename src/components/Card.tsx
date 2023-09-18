@@ -16,43 +16,52 @@ const Card: FC<CardProps> = ({ content }) => {
     backgroundColor: content.color,
   };
   return (
-    <div className="bg-[#211A75] w-full rounded-lg flex flex-col p-4 justify-center gap-y-2">
-      <div className="flex items-center justify-between gap-x-2">
-        <div className="flex items-center">
-          <div className="h-2 w-2 rounded-full bg-black" style={bgstyle}></div>
-          <span className="text-xs" style={textStyle}>
-            {content.label}
-          </span>
+    <div className="bg-dark-02 rounded-lg">
+      <div
+        className={`bg-[#211A75] min-w-[15rem] min-h-[10rem] max-w-[30rem] w-fit h-fit rounded-lg flex flex-col p-4 justify-center gap-y-2 ${
+          content.isRotated && "rotate-6 translate-x-4 translate-y-6"
+        }`}
+      >
+        <div className="flex items-center justify-between gap-x-2">
+          <div className="flex items-center">
+            <div
+              className="h-2 w-2 rounded-full bg-black"
+              style={bgstyle}
+            ></div>
+            <span className="text-xs" style={textStyle}>
+              {content.label}
+            </span>
+          </div>
+          <MoreHorizontal className="h-3 text-gray-01" />
         </div>
-        <MoreHorizontal className="h-3 text-gray-01" />
-      </div>
 
-      <span className="text-sm">
-        {content.description}adfgkudfgakdf fg kdf asudf bdsf udf buisdfa ;oi
-        osku eu bf sdnf
-      </span>
+        <span className="text-sm">
+          {content.description}adfgkudfgakdf fg kdf asudf bdsf udf buisdfa ;oi
+          osku eu bf sdnf
+        </span>
 
-      <Progress
-        colorScheme={content.color}
-        size="xs"
-        value={parseInt(content.completion)}
-        className="rounded-md bg-dark-04"
-      />
+        <Progress
+          colorScheme={content.color}
+          size="xs"
+          value={parseInt(content.completion)}
+          className="rounded-md bg-dark-04"
+        />
 
-      <div className="flex justify-between">
-        <AvatarGroup size="xs" max={4} className="text-dark-02">
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-          <Avatar src={ProfilePic} className="bg-gray-01" />
-        </AvatarGroup>
+        <div className="flex justify-between">
+          <AvatarGroup size="xs" max={4} className="text-dark-02">
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+            <Avatar src={ProfilePic} className="bg-gray-01" />
+          </AvatarGroup>
 
-        <div className="flex items-center">
-          <Clock4 className="h-3 w-3 text-gray-01" />
-          <span className="text-xs text-gray-01 pl-1">{content.due}</span>
+          <div className="flex items-center">
+            <Clock4 className="h-3 w-3 text-gray-01" />
+            <span className="text-xs text-gray-01 pl-1">{content.due}</span>
+          </div>
         </div>
       </div>
     </div>

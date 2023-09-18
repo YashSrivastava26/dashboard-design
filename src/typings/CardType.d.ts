@@ -5,4 +5,5 @@ interface CardContents {
   due: string;
   people: string;
   color: string;
+  isRotated?: boolean;
 }

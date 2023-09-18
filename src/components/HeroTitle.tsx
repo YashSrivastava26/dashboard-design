@@ -8,8 +8,12 @@ import ProfilePic from "../assets/profilePicture.svg";
 import AddFriend from "../assets/add-friend 1.svg";
 import Chat from "../assets/chat.svg";
 import { Avatar, AvatarGroup, Button, Progress } from "@chakra-ui/react";
+import { Open_Sans } from "next/font/google";
 
 interface HeroTitleProps {}
+const open_scans = Open_Sans({
+  subsets: ["latin"],
+});
 
 const HeroTitle: FC<HeroTitleProps> = ({}) => {
   return (
@@ -21,7 +25,9 @@ const HeroTitle: FC<HeroTitleProps> = ({}) => {
         <div className="flex justify-between items-center w-full">
           <div>
             <h3 className=" text:sm sm:text-lg">School November Tasks</h3>
-            <span className="text-gray-01 text-xs hidden md:block">
+            <span
+              className={`text-gray-01 text-xs hidden md:block ${open_scans.className}`}
+            >
               Created by Instructor Day on November 31, 2022
             </span>
           </div>
@@ -29,7 +35,9 @@ const HeroTitle: FC<HeroTitleProps> = ({}) => {
           <div className="text-right flex items-center justify-center">
             <div>
               <h3 className="text-md hidden md:block">Centered Martial Arts</h3>
-              <span className="text-gray-01 text-xs hidden md:block">
+              <span
+                className={`text-gray-01 text-xs hidden md:block ${open_scans.className}`}
+              >
                 Centered Martial Arts
               </span>
             </div>
@@ -44,7 +52,7 @@ const HeroTitle: FC<HeroTitleProps> = ({}) => {
         </div>
 
         <div className="flex w-full justify-between items-center py-2">
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-4 flex-wrap gap-y-2">
             <AvatarGroup
               size="xs"
               max={4}
@@ -65,7 +73,7 @@ const HeroTitle: FC<HeroTitleProps> = ({}) => {
               colorScheme="unset"
             >
               <Image src={AddFriend} alt="add friend" className="h-4 w-4" />
-              <span className="hidden lg:block">Invite People</span>
+              <span className="">Invite People</span>
             </Button>
 
             <Button
@@ -83,7 +91,7 @@ const HeroTitle: FC<HeroTitleProps> = ({}) => {
               colorScheme="unset"
             >
               <Image src={AddFriend} alt="add friend" className="h-4 w-4" />
-              <span className="hidden lg:block">Edit</span>
+              <span className="">Edit</span>
             </Button>
 
             <Button
@@ -92,7 +100,7 @@ const HeroTitle: FC<HeroTitleProps> = ({}) => {
               colorScheme="unset"
             >
               <Image src={Chat} alt="add friend" className="h-4 w-4" />
-              <span className="hidden lg:block">45 Comments</span>
+              <span className="">45 Comments</span>
             </Button>
           </div>
           <div className="hidden lg:flex text-xs items-center justify-center gap-x-4">

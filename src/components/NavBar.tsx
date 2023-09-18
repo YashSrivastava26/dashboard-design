@@ -18,7 +18,7 @@ const NavBar: FC<NavBarProps> = ({}) => {
         <input
           type="text"
           placeholder="Search Here"
-          className="bg-[#211A75] h-full w-full rounded-[4rem] p-4 pl-16"
+          className="bg-[#211A75] h-full w-full rounded-[4rem] p-4 pl-16 outline-none text-sm placeholder:text-sm"
         />
         <Image
           src={Search}
@@ -33,10 +33,30 @@ const NavBar: FC<NavBarProps> = ({}) => {
         </div>
 
         <div className="flex gap-x-4 px-4">
-          <Image src={Bell} alt="search" className="h-4 w-4" />
-          <Image src={Video} alt="search" className="h-4 w-4" />
-          <Image src={Checkbox} alt="search" className="h-4 w-4" />
-          <Image src={Office} alt="search" className="h-4 w-4" />
+          <div className="relative">
+            <Image src={Bell} alt="search" className="h-6 w-6" />
+            <div className=" absolute -top-2 -right-1 rounded-full bg-[#5ECFFF] text-[0.5rem] h-4 w-4 flex items-center justify-center text-dark-01 font-bold">
+              12
+            </div>
+          </div>
+          <div className="relative">
+            <Image src={Video} alt="search" className="h-6 w-6" />
+            <div className=" absolute -top-2 -right-1 rounded-full bg-[#5ECFFF] text-[0.5rem] h-4 w-4 flex items-center justify-center text-dark-01 font-bold">
+              5
+            </div>
+          </div>
+          <div className="relative">
+            <Image src={Checkbox} alt="search" className="h-6 w-6" />
+            <div className=" absolute -top-2 -right-1 rounded-full bg-[#5ECFFF] text-[0.5rem] h-4 w-4 flex items-center justify-center text-dark-01 font-bold">
+              2
+            </div>
+          </div>
+          <div className="relative">
+            <Image src={Office} alt="search" className="h-6 w-6" />
+            <div className=" absolute -top-2 -right-1 rounded-full bg-[#E328AF] text-[0.5rem] h-4 w-4 flex items-center justify-center text-dark-01 font-bold">
+              !
+            </div>
+          </div>
         </div>
 
         <div className="bg-[#211A75] px-4 h-8 flex ext-xs lg:text-sm items-center rounded-[4rem] text-white uppercase tracking-wide gap-x-2 w-fit">
@@ -45,9 +65,9 @@ const NavBar: FC<NavBarProps> = ({}) => {
           <Image src={ArrowDown} alt="search" className="w-2 h-2" />
         </div>
 
-        <div className="flex items-center px-6">
+        <div className="flex items-center px-6 gap-x-2">
           <Image src={Profile} alt="search" className="w-10 h-10" />
-          <div className="hidden xl:flex flex-col px-2 text-xs">
+          <div className="hidden xl:flex flex-col text-xs">
             <span className="text-white whitespace-nowrap overflow-hidden text-ellipsis">
               Instructor Day
             </span>

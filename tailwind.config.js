@@ -18,6 +18,11 @@ module.exports = {
         "dark-04": "#1E1C3A",
         "gray-01": "#A5A5A5",
       },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        "open-scans": ["var(--font-open-scans)"],
+        cario: ["var(--font-cario)"],
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],

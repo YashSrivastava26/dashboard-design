@@ -10,7 +10,7 @@ const Hero: FC<HeroProps> = ({}) => {
       <div className="flex w-full">
         <HeroTitle />
       </div>
-      <div className="flex h-full w-full pt-4 overflow-y-hidden overflow-x-auto">
+      <div className="h-full w-full pt-4 overflow-y-hidden overflow-hidden">
         <TaskList />
       </div>
     </div>

@@ -2,6 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import SideBar from "@/components/SideBar";
+import { Cairo } from "next/font/google";
+
+const cario = Cairo({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="h-screen w-screen flex">
+      <body className={`h-screen w-screen flex ${cario.className}`}>
         <Providers>
           <div className="flex h-screen w-screen text-white">
             <div className="hidden lg:flex h-full w-[16rem] flex-col gap-y-5 overflow-y-auto">
